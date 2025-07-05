@@ -7,6 +7,19 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      /home/viktor/nixos-config/system/configuration.nix
-  ];
+      ./audio.nix
+      ./fonts.nix
+      ./general.nix
+      ./hardware-configuration.nix
+      ./home-manager.nix
+      ./hyprland.nix
+      ./loc-settings.nix
+      ./systemd-boot.nix
+      ./users.nix
+      ./variables.nix
+    ];
+
+    home.manager.users."${config.var.username}" = import ../home/home.nix;
+
+    system.stateVersion = "25.05";
 }
