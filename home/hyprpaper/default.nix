@@ -6,8 +6,8 @@
       ipc = "on";
       splash = false;
 
-      preload = [ "/etc/nixos/hyprpaper/FWG_2560x1440.jpg" ];
-      wallpaper = [ ",/etc/nixos/hyprpaper/FWG_2560x1440.jpg" ];
+      preload = [ "~/nixos-config/home/wallpapers/1upns3.png" ];
+      wallpaper = [ ",~/nixos-config/home/wallpapers/1upns3.png" ];
     };
   };
 }

@@ -2,7 +2,7 @@
 
   imports = [
     # User config
-    ./variables.nix
+    ../system/variables.nix
 
     # Programs
     ./kitty.nix
@@ -27,12 +27,13 @@
       firefox
       kitty
       pywal
+      imagemagick
 
       # Dev
       python3
       
     ];
-
+    
 
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage

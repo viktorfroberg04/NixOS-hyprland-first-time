@@ -37,6 +37,8 @@
     waybar
     kitty
     wlogout
+    git
+    tree
   ];
 
   # Set the default editor to vim.
