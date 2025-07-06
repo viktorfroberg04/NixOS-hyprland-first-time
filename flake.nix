@@ -27,7 +27,7 @@
         ./configuration.nix
         
         # Add Catppuccin module
-        catppuccin.nixosModules.catppuccin
+        # catppuccin.nixosModules.catppuccin
       ];
     };
 
