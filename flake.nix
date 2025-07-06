@@ -34,6 +34,8 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             extraSpecialArgs = { inherit catppuccin; };
+            # Import catppuccin for home manager here
+            sharedModules = [ catppuccin.homeManagerModules.catppuccin ];
             # This will import your home.nix
             users.viktor = import ./home/home.nix;
           };
