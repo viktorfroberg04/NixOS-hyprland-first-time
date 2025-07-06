@@ -62,22 +62,7 @@
         epkgs.nix-mode
         epkgs.magit
       ];
-    };
-    
-    # VS Code configuration
-    vscode = {
-      enable = true;
-      profiles.default = {
-        extensions = with pkgs.vscode-extensions; [
-          catppuccin.catppuccin-vsc
-          catppuccin.catppuccin-vsc-icons
-        ];
-        userSettings = {
-          "workbench.colorTheme" = "Catppuccin Mocha";
-          "workbench.iconTheme" = "catppuccin-mocha";
-        };
-      };
-    };
+    };   
   };
 
   # Services should be at the top level
