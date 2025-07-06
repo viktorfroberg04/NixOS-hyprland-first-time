@@ -20,7 +20,7 @@
       # <home-manager/nixos>
     ];
 
-    home-manager.users."${config.var.username}" = import ./home/home.nix;
+    # home-manager.users."${config.var.username}" = import ./home/home.nix;
 
     system.stateVersion = "25.05";
 }
