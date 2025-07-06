@@ -38,31 +38,7 @@
       
     ];
     
-    programs = {
-      # Kitty terminal (if configured through home manager)
-      kitty.catppuccin.enable = true;
-  
-      # Other common applications
-      rofi.catppuccin.enable = true;
-      neofetch.catppuccin.enable = true;
-      btop.catppuccin.enable = true;
-  
-      # If you use other applications
-      firefox.catppuccin.enable = true;
-      git.catppuccin.enable = true;
-    };    
-
-    programs.vscode = {
-      enable = true;
-      extensions = with pkgs.vscode-extensions; [
-        catppuccin.catppuccin-vsc
-        catppuccin.catppuccin-vsc-icons
-      ];
-      userSettings = {
-        "workbench.colorTheme" = "Catppuccin Mocha";
-        "workbench.iconTheme" = "catppuccin-mocha";
-      };
-    };
+  };    
 
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
@@ -74,22 +50,42 @@
     # changes in each release.
     stateVersion = "25.05";
   };
-    # Let Home Manager install and manage itself.
-    programs.home-manager.enable = true;
 
-    programs.emacs = {
+  # Programs should be at the top level, not inside home
+  programs = {
+    # Let Home Manager install and manage itself
+    home-manager.enable = true;
+    
+    # Emacs configuration
+    emacs = {
       enable = true;
       extraPackages = epkgs: [
         epkgs.nix-mode
         epkgs.magit
       ];
     };
+    
+    # VS Code configuration
+    vscode = {
+      enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        catppuccin.catppuccin-vsc
+        catppuccin.catppuccin-vsc-icons
+      ];
+      userSettings = {
+        "workbench.colorTheme" = "Catppuccin Mocha";
+        "workbench.iconTheme" = "catppuccin-mocha";
+      };
+    };
+  };
 
-    services.gpg-agent = {
+  # Services should be at the top level
+  services = {
+    gpg-agent = {
       enable = true;
       defaultCacheTtl = 1800;
       enableSshSupport = true;
     };
-
+  };
 
 }
