@@ -1,8 +1,8 @@
-{ config, pkgs, ... }: {
+{ config, pkgs,  ... }: {
 
   imports = [
     # Add Catppuccin Home Manager module
-    # catppuccin.homeManagerModules.catppuccin
+    catppuccin.homeManagerModules.catppuccin
 
     # User config
     ../system/variables.nix
