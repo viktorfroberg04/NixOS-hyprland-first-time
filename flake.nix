@@ -26,18 +26,12 @@
         
         # Add Catppuccin module
         catppuccin.nixosModules.catppuccin
-        
-        # Home Manager integration
-        home-manager.nixosModules.home-manager
+
+        # Enable system-level Catppuccin
         {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            extraSpecialArgs = { inherit catppuccin; };
-            # Import catppuccin for home manager here
-            sharedModules = [ catppuccin.homeManagerModules.catppuccin ];
-            # This will import your home.nix
-            users.viktor = import ./home/home.nix;
+          catppuccin = {
+            enable = true;
+            flavor = "mocha";
           };
         }
       ];

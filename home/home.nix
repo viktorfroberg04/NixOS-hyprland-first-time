@@ -13,7 +13,7 @@
     # System
     ./hyprland-conf.nix
     ./hyprpaper
-    ./catppuccin
+    # ./catppuccin
   ];
     
   home = {
