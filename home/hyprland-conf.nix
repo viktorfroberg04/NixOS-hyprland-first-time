@@ -9,6 +9,7 @@
     enable = true;
     package = null;
     portalPackage = null;
+    catppuccin.enable = true;
 
     settings = {
 
@@ -17,9 +18,7 @@
 
       "$mod" = "SUPER";
       "$shiftMod" = "SUPER_SHIFT";      
-
-      exec-once = [ "/etc/nixos/set-theme.sh"
-      ];
+     
     };
   };
 }

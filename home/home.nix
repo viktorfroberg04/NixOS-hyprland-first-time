@@ -1,6 +1,9 @@
 { config, pkgs, ... }: {
 
   imports = [
+    # Add Catppuccin Home Manager module
+    catppuccin.homeManagerModules.catppuccin
+
     # User config
     ../system/variables.nix
 
@@ -10,6 +13,7 @@
     # System
     ./hyprland-conf.nix
     ./hyprpaper
+    ./catppuccin
   ];
     
   home = {
@@ -34,6 +38,31 @@
       
     ];
     
+    programs = {
+      # Kitty terminal (if configured through home manager)
+      kitty.catppuccin.enable = true;
+  
+      # Other common applications
+      rofi.catppuccin.enable = true;
+      neofetch.catppuccin.enable = true;
+      btop.catppuccin.enable = true;
+  
+      # If you use other applications
+      firefox.catppuccin.enable = true;
+      git.catppuccin.enable = true;
+    };    
+
+    programs.vscode = {
+      enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        catppuccin.catppuccin-vsc
+        catppuccin.catppuccin-vsc-icons
+      ];
+      userSettings = {
+        "workbench.colorTheme" = "Catppuccin Mocha";
+        "workbench.iconTheme" = "catppuccin-mocha";
+      };
+    };
 
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
