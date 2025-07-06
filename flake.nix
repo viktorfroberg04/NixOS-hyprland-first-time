@@ -30,7 +30,7 @@
         catppuccin.nixosModules.catppuccin
       ];
     };
-  };
+  }
 
     # Home Manager configuration (standalone)
     homeConfigurations.viktor = home-manager.lib.homeManagerConfiguration {
