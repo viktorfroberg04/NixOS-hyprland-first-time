@@ -28,17 +28,24 @@
         
         # Add Catppuccin module
         catppuccin.nixosModules.catppuccin
-        
-        # Home Manager integration
-        home-manager.nixosModules.home-manager
-        
-        # Enable system-level Catppuccin
         {
           catppuccin = {
             enable = true;
             flavor = "mocha";
           };
         }
+      ];
+    };
+
+    # Home Manager configuration (standalone)
+    homeConfigurations."your-username" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      extraSpecialArgs = { 
+        inherit catppuccin;
+      };
+      modules = [
+        ./home/home.nix
+        catppuccin.homeManagerModules.catppuccini
       ];
     };
   };

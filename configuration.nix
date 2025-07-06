@@ -11,7 +11,7 @@
       ./system/fonts.nix
       ./system/general.nix
       ./system/hardware-configuration.nix
-      ./system/home-manager.nix
+      # ./system/home-manager.nix
       ./system/hyprland.nix
       ./system/loc-settings.nix
       ./system/systemd-boot.nix
