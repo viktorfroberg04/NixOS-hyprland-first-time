@@ -5,13 +5,13 @@
     # accent = "blue";
     # Per-program theming
     kitty.enable = true;
-    # hyprland.enable = true;
-    # waybar.enable = true;
+    hyprland.enable = true;
+    waybar.enable = true;
     
     # Other programs you might want to theme
     # gtk.enable = true;
     # firefox.enable = true;
-    # rofi.enable = true;
+    rofi.enable = true;
     # dunst.enable = true;
     # btop.enable = true;
     # bat.enable = true;
