@@ -9,7 +9,7 @@
     enable = true;
     package = null;
     portalPackage = null;
-    catppuccin.enable = true;
+    # catppuccin.enable = true;
 
     settings = {
 

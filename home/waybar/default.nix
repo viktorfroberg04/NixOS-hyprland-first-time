@@ -4,7 +4,7 @@
   # status bar for hyprland/wayland
   programs.waybar = {
     enable = true;
-    catppuccin.enable = true;
+    # catppuccin.enable = true;
     settings = [
       {
         position = "top";
