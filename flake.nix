@@ -38,7 +38,7 @@
     };
 
     # Home Manager configuration (standalone)
-    homeConfigurations."your-username" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.viktor = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       extraSpecialArgs = { 
         inherit catppuccin;
