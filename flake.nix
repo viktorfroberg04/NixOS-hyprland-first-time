@@ -45,7 +45,7 @@
       };
       modules = [
         ./home/home.nix
-        catppuccin.homeManagerModules.catppuccini
+        catppuccin.homeManagerModules.catppuccin
       ];
     };
   };
