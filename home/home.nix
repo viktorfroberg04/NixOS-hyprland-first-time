@@ -38,7 +38,7 @@
       
     ];
     
-
+    
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
     # when a new Home Manager release introduces backwards
@@ -49,6 +49,9 @@
     # changes in each release.
     stateVersion = "25.05";
   };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 
   # Programs should be at the top level, not inside home
   programs = {
