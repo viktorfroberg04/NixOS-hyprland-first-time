@@ -7,21 +7,27 @@
     settings = [
       {
         position = "top";
+        margin-top = 8;
+        margin-bottom = 0;
+        layer = "top";
+        margin-left = 8;
+        margin-right = 8;
+        spacing = 10;
+        fixed-center = true;
+        exclusive = true;
         include = [ "${./shared.json}" ];
         modules-left = [
           "hyprland/workspaces"
+          "wlr/taskbar"
         ];
         modules-center = [
-          "clock#2"
-          "tray"
-          "clock#3"
+          "clock"
         ];
         modules-right = [
+          "group/hardware"
           "pulseaudio"
-          "memory"
-          "cpu"
-          "battery"
-          "group/group-power"
+          "network"
+          "custom/exit"
         ];
       }
     #  {

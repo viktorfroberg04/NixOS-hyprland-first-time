@@ -1,152 +1,289 @@
+/* Catppuccin Mocha Palette */
+@define-color rosewater #f5e0dc;
+@define-color flamingo #f2cdcd;
+@define-color pink #f5c2e7;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color maroon #eba0ac;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color teal #94e2d5;
+@define-color sky #89dceb;
+@define-color sapphire #74c7ec;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color text #cdd6f4;
+@define-color subtext1 #bac2de;
+@define-color subtext0 #a6adc8;
+@define-color overlay2 #9399b2;
+@define-color overlay1 #7f849c;
+@define-color overlay0 #6c7086;
+@define-color surface2 #585b70;
+@define-color surface1 #45475a;
+@define-color surface0 #313244;
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
+
+/* Waybar-specific color assignments (matching your original structure) */
+@define-color ws @mauve;        /* workspace active color */
+@define-color tt @red;          /* tooltip color */
+@define-color clock @yellow;    /* clock background */
+@define-color set @blue;        /* settings/modules background */
+@define-color tb rgba(69, 71, 90, 0.8);  /* taskbar background (surface1 with opacity) */
+@define-color tbh @pink;        /* taskbar hover */
+@define-color text @text;       /* text color */
+
+/* general */
 * {
-	font-size: 20px;
-	font-family: monospace;
+    font-family: "JetBrains Mono";
+    border: none;
+    border-radius: 5px;
 }
 
 window#waybar {
-	background: #292b2e;
-	color: #fdf6e3;
+    background-color: rgba(30, 30, 46, 0.9);  /* base color with transparency */
+    transition-property: background-color;
+    transition-duration: .5s;
 }
 
-#custom-right-arrow-dark,
-#custom-left-arrow-dark {
-	color: #1a1a1a;
-}
-#custom-right-arrow-light,
-#custom-left-arrow-light {
-	color: #292b2e;
-	background: #1a1a1a;
-}
-
-/* just the logo */
-#custom-spotify {
-	background: #1a1a1a;
-  color: #04982c;
-	padding: 5px 5px;
-}
-
-/* the info displayed by playerctl */
-#custom-mpris {
-	background: #1a1a1a;
-	color: #2aa198;
-	padding: 5px 5px;
-}
-
-#workspaces,
-#clock.1,
-#clock.2,
-#clock.3,
-#pulseaudio,
-#language,
-#network,
-#window,
-#memory,
-#cpu,
-#battery,
-#disk,
-#tray {
-	background: #1a1a1a;
+/* workspaces */
+#workspaces {
+    margin: 4px 1px 4px 1px;
+    padding: 0px 0px;
+    border-radius: 5px;
+    border: 0px;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+    color: @text;
+    opacity: 0.9;
 }
 
 #workspaces button {
-	padding: 0 2px;
-	color: #fdf6e3;
+    margin: 0px 2px;
+    padding: 0px 5px;
+    color: @text;
+    transition: all 0.3s ease-in-out;
 }
+
 #workspaces button.active {
-	color: #268bd2;
-}
-#workspaces button.focused {
-	color: #268bd2;
-}
-#workspaces button:hover {
-	box-shadow: inherit;
-	text-shadow: inherit;
-}
-#workspaces button:hover {
-	background: #1a1a1a;
-	border: #1a1a1a;
-	padding: 0 3px;
+    color: @crust;
+    background: @ws;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.9;
 }
 
+#workspaces button:hover {
+    color: @crust;
+    background: @ws;
+    opacity: 0.9;
+    border: none;
+    box-shadow: none;
+}
+
+/* taskbar */
+#taskbar {
+    background: @tb;
+    margin: 4px 15px 4px 1px;
+    padding: 0px;
+}
+
+#taskbar button {
+    margin: 0px 1px;
+    border-radius: 5px;
+    padding: 0px 5px;
+}
+
+#taskbar button:hover {
+    background: @tbh;
+    opacity: 1;
+    border: none;
+    box-shadow: none;
+}
+
+/* tooltip */
+tooltip {
+    border-radius: 5px;
+    background-color: @tt;
+    opacity: 0.8;
+}
+
+tooltip label {
+    border-radius: 5px;
+    background-color: @tt;
+    opacity: 0.8;
+    padding: 0px;
+    margin: -5px 0px;
+    font-size: 12px;
+    color: @text;
+}
+
+/* modules */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 10px;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0px;
+}
+
+/* clock */
+#clock {
+    background-color: @clock;
+    font-size: 16px;
+    color: @crust;
+    border-radius: 5px;
+    padding: 1px 10px 0px 10px;
+    margin: 4px 1px;
+    opacity: 0.9;
+    border: none;   
+}
+
+/* hardware group */
+#cpu,#temperature,#disk,#memory {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    color: @yellow;
+}
+
+/* audio */
 #pulseaudio {
-	color: #268bd2;
-}
-#memory {
-	color: #2aa198;
-}
-#cpu {
-	color: #6c71c4;
-}
-#battery {
-	color: #859900;
-}
-#disk {
-	color: #b58900;
+    background-color: @set;
+    font-size: 16px;
+    color: @crust;
+    border-radius: 5px;
+    padding: 1px 10px 0px 10px;
+    margin: 4px 1px 4px -15px;
+    opacity: 0.9;
 }
 
-#clock,
-#pulseaudio,
-#memory,
-#cpu,
-#battery,
-#disk {
-	padding: 0 10px;
-}
-
-#custom-quit {
-  color: #f59809;
-	background: #1a1a1a;
-}
-
-#custom-lock {
-  color: #6f05e5;
-	background: #1a1a1a;
-}
-
-#custom-reboot {
-  color: #00aba3;
-	background: #1a1a1a;
-}
-
-#custom-power {
-  color: #ff1818;
-	background: #1a1a1a;
-}
-
-#not-power {
-	padding: 0 0px;
-	padding-left: 10px;
-}
-
+/* network */
 #network {
-	background: #1a1a1a;
-	padding: 0px 15px;
-}
-
-#network.disabled {
-  color: #aba8a8;
-}
-
-#network.disconnected {
-  color: #aba8a8;
+    background-color: @set;
+    font-size: 16px;
+    color: @crust;
+    border-radius: 5px;
+    padding: 1px 10px 0px 10px;
+    margin: 4px 1px;
+    opacity: 0.9;
 }
 
 #network.ethernet {
-	color: #2aa198;
+    background-color: @set;
+    color: @crust;
 }
 
 #network.wifi {
-	color: #268bd2;
+    background-color: @set;
+    color: @crust;
 }
 
-#language {
-	color: #b58900;
-	background: #1a1a1a;
-  border-radius: 0px;
-	padding: 0px 5px;
+/* bluetooth */
+#bluetooth, #bluetooth.on, #bluetooth.connected, #bluetooth.off {
+    background-color: @set;
+    font-size: 16px;
+    color: @crust;
+    border-radius: 5px;
+    padding: 1px 10px 0px 10px;
+    margin: 4px 1px;
+    opacity: 0.9;
 }
 
-#window {
-	background: #1a1a1a;
-	padding: 0px 0px;
+/* battery */
+#battery {
+    background-color: @set;
+    font-size: 16px;
+    color: @crust;
+    border-radius: 5px;
+    padding: 1px 10px 0px 10px;
+    margin: 4px 1px;
+    opacity: 0.9;
+}
+
+#battery.charging, #battery.plugged {
+    color: @crust;
+    background-color: @green;
+}
+
+@keyframes blink {
+    to {
+        background-color: @red;
+        color: @text;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: @red;
+    color: @text;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* tray */
+#tray {
+    padding: 0px 15px 0px 0px;
+    color: @text;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+/* custom modules */
+#custom-exit {
+    margin: 0px 18px 0px 5px;
+    padding: 0px;
+    font-size: 20px;
+    color: @red;
+}
+
+#custom-system {
+    margin-right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.8;
+    color: @text;
+}
+
+#custom-settings {
+    margin-right: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.8;
+    color: @text;
+}
+
+#custom-updates {
+    background-color: @set;
+    font-size: 16px;
+    color: @crust;
+    border-radius: 5px;
+    padding: 2px 10px 0px 10px;
+    margin: 8px 15px 8px 0px;
+    opacity:0.8;
+}
+
+#custom-updates.green {
+    background-color: @green;
+    color: @crust;
+}
+
+#custom-updates.yellow {
+    background-color: @peach;
+    color: @crust;
+}
+
+#custom-updates.red {
+    background-color: @red;
+    color: @text;
 }

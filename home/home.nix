@@ -62,7 +62,5 @@
       enableSshSupport = true;
     };
 
-    nixpkgs.config.allowUnfree = true;
-
 
 }

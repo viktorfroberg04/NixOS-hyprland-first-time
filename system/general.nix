@@ -39,6 +39,7 @@
     wlogout
     git
     tree
+    neofetch
   ];
 
   # Set the default editor to vim.

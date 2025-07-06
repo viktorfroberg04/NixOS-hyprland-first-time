@@ -6,8 +6,8 @@
       ipc = "on";
       splash = false;
 
-      preload = [ "~/nixos-config/home/wallpapers/1upns3.png" ];
-      wallpaper = [ ",~/nixos-config/home/wallpapers/1upns3.png" ];
+      preload = [ "~/nixos-config/home/wallpapers/forrest.png" ];
+      wallpaper = [ ",~/nixos-config/home/wallpapers/forrest.png" ];
     };
   };
 }
