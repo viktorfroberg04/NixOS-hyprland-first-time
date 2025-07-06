@@ -27,7 +27,7 @@
         ./configuration.nix
         
         # Add Catppuccin module
-        # catppuccin.nixosModules.catppuccin
+        catppuccin.nixosModules.catppuccin
       ];
     };
 
@@ -39,7 +39,7 @@
       };
       modules = [
         ./home/home.nix
-        catppuccin.homeManagerModules.catppuccin
+        # catppuccin.homeManagerModules.catppuccin
       ];
     };
   };
