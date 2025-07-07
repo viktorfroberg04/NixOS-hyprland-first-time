@@ -10,6 +10,7 @@
 
     # Programs
     ./kitty.nix
+    ./vscode
 
     # System
     ./hyprland-conf.nix
@@ -26,13 +27,14 @@
     packages = with pkgs; [
       #Apps
       librewolf
-      vscode
       inkscape
       gimp
       firefox
-      kitty
       pywal
       imagemagick
+      thunderbird
+      rofi
+      
 
       # Dev
       python3
@@ -58,7 +60,9 @@
   programs = {
     # Let Home Manager install and manage itself
     home-manager.enable = true;
-    
+   
+    rofi.enable = true;
+
     # Emacs configuration
     emacs = {
       enable = true;

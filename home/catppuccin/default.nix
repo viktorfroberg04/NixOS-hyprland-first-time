@@ -7,6 +7,7 @@
     kitty.enable = true;
     hyprland.enable = true;
     waybar.enable = true;
+    thunderbird.enable = true;
     
     # Other programs you might want to theme
     # gtk.enable = true;
