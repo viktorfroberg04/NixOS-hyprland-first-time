@@ -3,7 +3,7 @@
   imports = [
     # Add Catppuccin Home Manager module
     # catppuccin.homeManagerModules.catppuccin
-    catppuccin.homeModules.catppuccin
+    # catppuccin.homeModules.catppuccin
 
     # User config
     ../system/variables.nix
