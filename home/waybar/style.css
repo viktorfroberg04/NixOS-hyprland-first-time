@@ -1,39 +1,13 @@
-/* Catppuccin Mocha Palette */
-@define-color rosewater #f5e0dc;
-@define-color flamingo #f2cdcd;
-@define-color pink #f5c2e7;
-@define-color mauve #cba6f7;
-@define-color red #f38ba8;
-@define-color maroon #eba0ac;
-@define-color peach #fab387;
-@define-color yellow #f9e2af;
-@define-color green #a6e3a1;
-@define-color teal #94e2d5;
-@define-color sky #89dceb;
-@define-color sapphire #74c7ec;
-@define-color blue #89b4fa;
-@define-color lavender #b4befe;
-@define-color text #cdd6f4;
-@define-color subtext1 #bac2de;
-@define-color subtext0 #a6adc8;
-@define-color overlay2 #9399b2;
-@define-color overlay1 #7f849c;
-@define-color overlay0 #6c7086;
-@define-color surface2 #585b70;
-@define-color surface1 #45475a;
-@define-color surface0 #313244;
-@define-color base #1e1e2e;
-@define-color mantle #181825;
-@define-color crust #11111b;
+@import "../../.cache/wal/colors-waybar.css";
 
 /* Waybar-specific color assignments (matching your original structure) */
-@define-color ws @mauve;        /* workspace active color */
-@define-color tt @red;          /* tooltip color */
-@define-color clock @yellow;    /* clock background */
-@define-color set @blue;        /* settings/modules background */
-@define-color tb rgba(69, 71, 90, 0.8);  /* taskbar background (surface1 with opacity) */
-@define-color tbh @pink;        /* taskbar hover */
-@define-color text @text;       /* text color */
+@define-color ws @color4;        /* workspace active color */
+@define-color tt @color1;          /* tooltip color */
+@define-color clock @color3;    /* clock background */
+@define-color set @color4;        /* settings/modules background */
+@define-color tb rgba(200, 200, 200, 0.2);  /* taskbar background (surface1 with opacity) */
+@define-color tbh @color5;        /* taskbar hover */
+@define-color text #FFFFFF;       /* text color */
 
 /* general */
 * {
@@ -43,7 +17,7 @@
 }
 
 window#waybar {
-    background-color: rgba(30, 30, 46, 0.9);  /* base color with transparency */
+    background-color: rgba(0,0,0,0.3);  /* base color with transparency */
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -69,14 +43,14 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: @crust;
+    color: @text;
     background: @ws;
     transition: all 0.3s ease-in-out;
     opacity: 0.9;
 }
 
 #workspaces button:hover {
-    color: @crust;
+    color: @text;
     background: @ws;
     opacity: 0.9;
     border: none;
@@ -133,7 +107,7 @@ tooltip label {
 #clock {
     background-color: @clock;
     font-size: 16px;
-    color: @crust;
+    color: @text;
     border-radius: 5px;
     padding: 1px 10px 0px 10px;
     margin: 4px 1px;
@@ -146,14 +120,14 @@ tooltip label {
     margin: 0px;
     padding: 0px;
     font-size: 16px;
-    color: @yellow;
+    color: @text;
 }
 
 /* audio */
 #pulseaudio {
     background-color: @set;
     font-size: 16px;
-    color: @crust;
+    color: @text;
     border-radius: 5px;
     padding: 1px 10px 0px 10px;
     margin: 4px 1px 4px -15px;
@@ -164,7 +138,7 @@ tooltip label {
 #network {
     background-color: @set;
     font-size: 16px;
-    color: @crust;
+    color: @text;
     border-radius: 5px;
     padding: 1px 10px 0px 10px;
     margin: 4px 1px;
@@ -173,19 +147,19 @@ tooltip label {
 
 #network.ethernet {
     background-color: @set;
-    color: @crust;
+    color: @text;
 }
 
 #network.wifi {
     background-color: @set;
-    color: @crust;
+    color: @text;
 }
 
 /* bluetooth */
 #bluetooth, #bluetooth.on, #bluetooth.connected, #bluetooth.off {
     background-color: @set;
     font-size: 16px;
-    color: @crust;
+    color: @text;
     border-radius: 5px;
     padding: 1px 10px 0px 10px;
     margin: 4px 1px;
@@ -196,7 +170,7 @@ tooltip label {
 #battery {
     background-color: @set;
     font-size: 16px;
-    color: @crust;
+    color: @text;
     border-radius: 5px;
     padding: 1px 10px 0px 10px;
     margin: 4px 1px;
@@ -204,7 +178,7 @@ tooltip label {
 }
 
 #battery.charging, #battery.plugged {
-    color: @crust;
+    color: @text;
     background-color: @green;
 }
 
@@ -216,7 +190,7 @@ tooltip label {
 }
 
 #battery.critical:not(.charging) {
-    background-color: @red;
+    background-color: #f53c3c;
     color: @text;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -244,7 +218,7 @@ tooltip label {
     margin: 0px 18px 0px 5px;
     padding: 0px;
     font-size: 20px;
-    color: @red;
+    color: @text;
 }
 
 #custom-system {
@@ -266,7 +240,7 @@ tooltip label {
 #custom-updates {
     background-color: @set;
     font-size: 16px;
-    color: @crust;
+    color: @text;
     border-radius: 5px;
     padding: 2px 10px 0px 10px;
     margin: 8px 15px 8px 0px;
@@ -274,16 +248,16 @@ tooltip label {
 }
 
 #custom-updates.green {
-    background-color: @green;
-    color: @crust;
+    background-color: @set;
+    color: @text;
 }
 
 #custom-updates.yellow {
-    background-color: @peach;
-    color: @crust;
+    background-color: #ff9a3c;
+    color: #FFFFFF;
 }
 
 #custom-updates.red {
-    background-color: @red;
-    color: @text;
+    background-color: #dc2f2f;
+    color: #FFFFFF;
 }
