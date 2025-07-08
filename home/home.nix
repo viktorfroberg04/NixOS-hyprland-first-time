@@ -12,6 +12,7 @@
     # System
     ./hyprland-conf.nix
     ./hyprpaper
+    ./wlogout
   ];
     
   home = {
@@ -84,6 +85,65 @@
           @define-color color15 {color15};
         '';
       };
+
+      # Add the rofi template here
+      ".config/wal/templates/colors-rofi-dark.rasi" = {
+        text = ''
+          * {{
+              background: rgba({color0.rgb}, 0.90);
+              foreground: {color15};
+              active-background: {color3};
+              urgent-background: {color1};
+              selected-background: {color2};
+              normal-background: rgba({color0.rgb}, 0.90);
+              normal-foreground: {color15};
+              alternate-background: rgba({color0.rgb}, 0.90);
+              alternate-foreground: {color15};
+              urgent-foreground: {color15};
+              active-foreground: {color15};
+              selected-normal-background: {color2};
+              selected-normal-foreground: {color15};
+              selected-urgent-background: {color1};
+              selected-urgent-foreground: {color15};
+              selected-active-background: {color3};
+              selected-active-foreground: {color15};
+              alternate-normal-background: rgba({color0.rgb}, 0.90);
+              alternate-normal-foreground: {color15};
+              alternate-urgent-background: rgba({color0.rgb}, 0.90);
+              alternate-urgent-foreground: {color15};
+              alternate-active-background: rgba({color0.rgb}, 0.90);
+              alternate-active-foreground: {color15};
+              border-color: {color0};
+              spacing: 2;
+          }}
+        '';
+      };
+
+      # Add the wlogout color template here
+      ".config/wal/templates/colors-wlogout.css" = {
+        text = ''
+          @define-color foreground {foreground};
+          @define-color background {background};
+          @define-color cursor {cursor};
+
+          @define-color color0 {color0};
+          @define-color color1 {color1};
+          @define-color color2 {color2};
+          @define-color color3 {color3};
+          @define-color color4 {color4};
+          @define-color color5 {color5};
+          @define-color color6 {color6};
+          @define-color color7 {color7};
+          @define-color color8 {color8};
+          @define-color color9 {color9};
+          @define-color color10 {color10};
+          @define-color color11 {color11};
+          @define-color color12 {color12};
+          @define-color color13 {color13};
+          @define-color color14 {color14};
+          @define-color color15 {color15};   
+        '';   
+      };          
     };
     
     # This value determines the Home Manager release that your

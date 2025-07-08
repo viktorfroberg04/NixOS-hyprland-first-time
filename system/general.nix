@@ -34,13 +34,9 @@
     wget
     pciutils
     home-manager
-    rofi
-    waybar
     kitty
-    wlogout
     git
     tree
-    neofetch
   ];
 
   # Set the default editor to vim.

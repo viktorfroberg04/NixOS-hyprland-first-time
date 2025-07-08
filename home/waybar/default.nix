@@ -48,6 +48,5 @@
     #  }
     ];
     style = builtins.readFile ./style.css;
-    systemd.enable = true;
   };
 }
