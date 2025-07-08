@@ -10,6 +10,7 @@
 
 window {
     background-image: image(url("../../nixos-config/home/wallpapers/yosemite.png"));
+    background-size: cover; 
 }
 
 button {
