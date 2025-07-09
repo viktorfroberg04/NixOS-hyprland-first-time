@@ -11,6 +11,7 @@
 
     # System
     ./hyprland-conf.nix
+    ./hyprlock.nix
     ./hyprpaper
     ./wlogout
   ];
