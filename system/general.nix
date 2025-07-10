@@ -37,6 +37,7 @@
     kitty
     git
     tree
+    firefox
   ];
 
   # Set the default editor to vim.

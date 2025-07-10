@@ -26,19 +26,7 @@
           color = "$color7";
           font_size = 80;
           font_family = "JetBrains Mono ExtraBold";
-          position = "0, 100";
-          halign = "center";
-          valign = "center";
-        }
-
-        # Greeting
-        {
-          monitor = "";
-          text = "Hello $USER!";
-          color = "$color7";
-          font_size = 20;
-          font_family = "JetBrains Mono Light";
-          position = "0, 0";
+          position = "0, 50";
           halign = "center";
           valign = "center";
         }

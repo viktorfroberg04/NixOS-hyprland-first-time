@@ -8,10 +8,12 @@
     ./kitty.nix
     ./vscode
     ./rofi
+    ./fastfetch
 
     # System
     ./hyprland-conf.nix
     ./hyprlock.nix
+    ./hypridle.nix
     ./hyprpaper
     ./wlogout
   ];
