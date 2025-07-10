@@ -2,7 +2,7 @@
   imports = [ ];
   config.var = {
     hostname = "nixos";
-    username = "Viktor";
+    username = "viktor";
     
     keyboardLayout = "sv-latin1";
 

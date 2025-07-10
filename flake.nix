@@ -11,9 +11,20 @@
     };
   };
   
-  outputs = { self, nixpkgs, home-manager }: {
+  outputs = { self, nixpkgs, home-manager }: 
+    let
+      # Import your variables
+      vars = import ./system/variables.nix { 
+        config = {}; 
+        lib = nixpkgs.lib; 
+      };
+        
+      # Extract the actual values from the config
+      hostname = vars.config.var.hostname;
+      username = vars.config.var.username;
+    in {
     # Replace 'nixos' with your actual hostname
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";  # Change if you're on ARM
       specialArgs = { 
         inherit self;
@@ -25,7 +36,7 @@
     };
 
     # Home Manager configuration (standalone)
-    homeConfigurations.viktor = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       extraSpecialArgs = { 
       };
