@@ -9,6 +9,7 @@
     ./vscode
     ./rofi
     ./fastfetch
+    ./btop
 
     # System
     ./hyprland-conf.nix
