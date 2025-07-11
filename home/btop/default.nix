@@ -2,7 +2,7 @@
 
 {
   # Install the theme update script directly as text
-  home.file.".local/bin/update-btop-theme" = {
+  home.file.".local/bin/update-btop-theme.sh" = {
     text = ''
       #!/bin/bash
       
@@ -44,6 +44,12 @@
       theme[free_start]="$color2"
       theme[free_mid]="$color3"
       theme[free_end]="$color1"
+      theme[cached_start]="$color2"
+      theme[cached_mid]="$color3"
+      theme[cached_end]="$color1"
+      theme[available_start]="$color2"
+      theme[available_mid]="$color3"
+      theme[available_end]="$color1"
       theme[used_start]="$color1"
       theme[used_mid]="$color3"
       theme[used_end]="$color2"

@@ -10,6 +10,7 @@
     ./rofi
     ./fastfetch
     ./btop
+    ./thunar
 
     # System
     ./hyprland-conf.nix
