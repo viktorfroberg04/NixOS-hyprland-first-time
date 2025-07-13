@@ -10,7 +10,7 @@
     ./rofi
     ./fastfetch
     ./btop
-    ./thunar
+    ./ranger
 
     # System
     ./hyprland-conf.nix
@@ -18,6 +18,7 @@
     ./hypridle.nix
     ./hyprpaper
     ./wlogout
+    ./mako
   ];
     
   home = {
@@ -43,6 +44,8 @@
    
     # Pywal color template
     file = {
+
+      # Hyprland color template
       ".config/wal/templates/colors-hyprland.conf" = {
         text = ''
           $color0 = rgb({color0.strip})
@@ -66,6 +69,7 @@
         '';
       };
    
+      # Waybar color template   
       ".config/wal/templates/colors-waybar.css" = {
         text = ''
           @define-color foreground {foreground};
@@ -91,7 +95,7 @@
         '';
       };
 
-      # Add the rofi template here
+      # Rofi color template
       ".config/wal/templates/colors-rofi-dark.rasi" = {
         text = ''
           * {{
@@ -124,7 +128,7 @@
         '';
       };
 
-      # Add the wlogout color template here
+      # Wlogout color template
       ".config/wal/templates/colors-wlogout.css" = {
         text = ''
           @define-color foreground {foreground};
@@ -147,9 +151,41 @@
           @define-color color13 {color13};
           @define-color color14 {color14};
           @define-color color15 {color15};   
-        '';   
-      };          
-    };
+        '';  
+      };
+
+      # Mako template
+      ".config/wal/templates/mako" = {
+        text = ''
+          background-color={background}E6
+          text-color={foreground}
+          border-color={color4}
+          border-size=2
+          border-radius=5
+          padding=10
+          default-timeout=5000
+          width=300
+          height=100
+          margin=10
+          icons=true
+          max-icon-size=48
+          anchor=top-right
+
+          [urgency=low]
+          background-color={background}E6
+          text-color={color7}
+
+          [urgency=normal]
+          background-color={background}E6
+          text-color={color15}
+
+          [urgency=high]
+          background-color={color1}E6
+          text-color={color15}
+        '';
+      };
+
+    };          
     
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
@@ -169,15 +205,7 @@
   programs = {
     # Let Home Manager install and manage itself
     home-manager.enable = true;
-
-    # Emacs configuration
-    emacs = {
-      enable = true;
-      extraPackages = epkgs: [
-        epkgs.nix-mode
-        epkgs.magit
-      ];
-    };   
+ 
   };
 
   # Services should be at the top level
