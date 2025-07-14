@@ -5,15 +5,15 @@
       # Program launchers
       "$mod, Return, exec, kitty"                          # Terminal
       "$mod, D, exec, rofi -show drun"                     # App launcher
-      "$mod SHIFT, Q, exec, hyprctl dispatch exit"         # Logout menu
+      "$mod, M, exec, wlogout -b 2"                        # Logout menu
 
       # Window management
-      "$mod, Q, killactive"                               # Stäng fönster
+      "$mod, Q, killactive"                               # Close window
       "$mod, F, fullscreen"                               # Toggle fullscreen
-      "$mod, Space, togglefloating"                       # Toggle flytande
+      "$mod, Space, togglefloating"                       # Toggle floating
 
       # Reload Hyprland
-      "$mod SHIFT, R, exec, hyprctl reload"
+      "$shiftMod, R, exec, hyprctl reload"
 
       # Switch to workspace 1-10
       "$mod, 1, workspace, 1"
@@ -43,14 +43,31 @@
       "$mod, Tab, workspace, e+1"
       "$shiftMod, Tab, workspace, e-1"
 
-      # Move to next/previous workspace with arrow keys
-      "$mod, right, workspace, e+1"
-      "$mod, left, workspace, e-1"
+      # move focus
+      "$mod, left, movefocus, l"
+      "$mod, right, movefocus, r"
+      "$mod, up, movefocus, u"
+      "$mod, down, movefocus, d"
 
-      # Move window to next/previous workspace
-      "$shiftMod, right, movetoworkspace, e+1"
-      "$shiftMod, left, movetoworkspace, e-1"
+      # scroll through existing workspaces
+      "$mod, mouse_down, workspace, e+1"
+      "$mod, mouse_up, workspace, e-1"
+
+      "$shiftMod, right, resizeactive, 30 0"
+      "$shiftMod, left, resizeactive, -30 0"
+      "$shiftMod, up, resizeactive, 0 -30"
+      "$shiftMod, down, resizeactive, 0 30"
+
+      "$shiftMod, L, moveactive, 30 0"
+      "$shiftMod, I, moveactive, -30 0"
+      "$shiftMod, O, moveactive, 0 -30"
+      "$shiftMod, K, moveactive, 0 30" 
     ];
 
+    bindm = [
+      # move/resize windows
+      "$mod, mouse:272, movewindow"
+      "$shiftMod, mouse:272, resizewindow"
+    ];
   };
 }

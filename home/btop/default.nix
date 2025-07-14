@@ -4,7 +4,7 @@
   # Install the theme update script directly as text
   home.file.".local/bin/update-btop-theme.sh" = {
     text = ''
-      #!/bin/bash
+      #!/usr/bin/env bash
       
       # Check if pywal colors exist
       if [ ! -f "$HOME/.cache/wal/colors.sh" ]; then

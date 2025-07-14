@@ -9,7 +9,7 @@
   # Script to create symlink and reload mako
   home.file.".local/bin/mako-pywal-setup" = {
     text = ''
-      #!/bin/bash
+      #!/usr/bin/env bash
       MAKO_CONFIG_DIR="$HOME/.config/mako"
       MAKO_CONFIG="$MAKO_CONFIG_DIR/config"
       WAL_CONFIG="$HOME/.cache/wal/mako"

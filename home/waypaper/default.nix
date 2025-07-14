@@ -27,8 +27,7 @@
 
       # Update mako config
       if [ -f "$HOME/.cache/wal/mako" ]; then
-        mkdir -p "$HOME/.config/mako"
-        ln -sf "$HOME/.cache/wal/mako" "$HOME/.config/mako/config"
+        $HOME/.local/bin/mako-pywal-setup
       fi
       
       # Restart/reload applications
@@ -41,6 +40,13 @@
         waybar &
       else
         waybar &  
+      fi
+
+      if pgrep btop >/dev/null; then
+        pkill btop
+        $HOME/.local/bin/update-btop-theme.sh
+      else
+        $HOME/.local/bin/update-btop-theme.sh
       fi
       
       if pgrep Hyprland >/dev/null; then

@@ -12,6 +12,7 @@
     ./btop
     ./ranger
     ./waypaper
+    ./cava
 
     # System
     ./hyprland-conf.nix
@@ -103,7 +104,7 @@
           * {{
               background: rgba({color0.rgb}, 0.90);
               foreground: {color15};
-              active-background: {color3};
+              active-background: rgba({color3.rgb}, 0.90);
               urgent-background: {color1};
               selected-background: {color2};
               normal-background: rgba({color0.rgb}, 0.90);
@@ -187,6 +188,69 @@
         '';
       };
 
+      # Cava Pywal Template
+      ".config/wal/templates/colors-cava" = {
+        text = ''
+          ## Configuration file for CAVA. Default values are commented out. Use either ';' or '#' for commenting.
+
+          [general]
+          ; mode = normal
+          ; framerate = 60
+          ; autosens = 1
+          ; overshoot = 20
+          ; sensitivity = 100
+          ; bars = 0
+          ; bar_width = 2
+          ; bar_spacing = 1
+          ; lower_cutoff_freq = 50
+          ; higher_cutoff_freq = 10000
+          ; sleep_timer = 0
+
+          [input]
+          method = pulse
+          source = auto
+
+          [output]
+          ; method = ncurses
+          ; channels = stereo
+          ; mono_option = average
+          ; raw_target = /dev/stdout
+          ; data_format = binary
+          ; bit_format = 16bit
+          ; ascii_max_range = 1000
+          ; bar_delimiter = 59
+          ; frame_delimiter = 10
+          ; sdl_width = 1000
+          ; sdl_height = 500
+          ; sdl_x = -1
+          ; sdl_y = -1
+
+          [color]
+          gradient = 1
+          gradient_color_1 = '{color0}'
+          gradient_color_2 = '{color2}'
+          gradient_color_3 = '{color3}'
+          gradient_color_4 = '{color5}'
+          gradient_color_5 = '{color7}'
+          gradient_color_6 = '{color12}'
+          gradient_color_7 = '{color13}'
+          gradient_color_8 = '{color15}'
+
+          [smoothing]
+          ; integral = 77
+          ; monstercat = 1
+          ; waves = 1
+          ; gravity = 90
+          ; ignore = 0
+
+          [eq]
+          ; 1 = 1 # bass
+          ; 2 = 1
+          ; 3 = 1 # midtone
+          ; 4 = 1
+          ; 5 = 1 # treble
+        '';
+      };
     };          
     
     # This value determines the Home Manager release that your

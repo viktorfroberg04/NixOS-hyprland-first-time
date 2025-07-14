@@ -19,13 +19,30 @@ window {
     background-color: @background;
     border: 2px;
     border-color: @accent-color;
-    border-radius: 5px;
+    border-radius: 24px;
+    padding: 0px 12px;
 }
 
 inputbar {
-    spacing: 8px;
+    margin: 12px 0px 12px 0px;
     padding: 8px;
     background-color: @normal-background;
+    border: 2px;
+    border-color: @accent-color;
+    border-radius: 16px;
+
+    children:   [ prompt, entry ];
+}
+
+prompt {
+    text-color: @accent-color;
+    background-color: transparent;
+}
+
+entry {
+    cursor-color: transparent;
+    placeholder:        "Search";
+    placeholder-color:  @text-color;
 }
 
 prompt, entry, element-icon, element-text {
@@ -42,7 +59,7 @@ textbox {
 }
 
 listview {
-    padding: 4px 0;
+    margin: 0px 0px 12px 0px;
     lines: 8;
     columns: 1;
     fixed-height: false;
@@ -70,27 +87,22 @@ element.alternate.active {
 }
 
 element.selected {
-    background-color: transparent;
-    text-color: @normal-foreground;
-    border: 2px; 
-    border-color: @accent-color;
-    border-radius: 4px;
+    background-color: @accent-color;
+    text-color: @background;
 }
 
 element.selected.normal, element.selected.active {
-    background-color: transparent;
-    border: 2px;
-    border-color:  @accent-color;
+    background-color: @accent-color;
+    border-radius: 16px;
 }
 
 element.selected.urgent {
     background-color: transparent;
-    border: 2px;
-    border-color: @urgent-color;
 }
 
 element-icon {
-    size: 0.8em;
+    size: 1em;
+    vertical-align: 0.5;
 }
 
 element-text {
