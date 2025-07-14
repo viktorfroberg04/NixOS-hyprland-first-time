@@ -1,4 +1,4 @@
-{ config, pkgs, username, ... }: {
+{ config, pkgs, ... }: {
 
   imports = [
     # User config
@@ -12,7 +12,7 @@
     ./btop
     ./ranger
     ./waypaper
-    ./cava
+    # ./cava       # Fix how file is read!!
 
     # System
     ./hyprland-conf.nix
@@ -25,7 +25,8 @@
   ];
     
   home = {
-    homeDirectory = "/home/${username}";
+    inherit (config.var) username;
+    homeDirectory = "/home/" + config.var.username;
 
     
     # Packages that should be installed to the user profile.
