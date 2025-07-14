@@ -6,8 +6,8 @@
       ipc = "on";
       splash = false;
 
-      preload = [ "~/nixos-config/home/wallpapers/yosemite.png" ];
-      wallpaper = [ ",~/nixos-config/home/wallpapers/yosemite.png" ];
+      #preload = [ "~/nixos-config/home/wallpapers/yosemite.png" ];
+      #wallpaper = [ ",~/nixos-config/home/wallpapers/yosemite.png" ];
     };
   };
 }

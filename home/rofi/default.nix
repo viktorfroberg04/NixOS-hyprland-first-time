@@ -17,7 +17,9 @@
       modi = "drun,filebrowser";
       font = "Noto Sans CJK JP 12";
       show-icons = true;
-      disable-history = true;
+      disable-history = false;
+      sort-by-frequency = true;
+      frequency-num-entries = 8;
       hover-select = true;
       bw = 0;
       display-drun = "";

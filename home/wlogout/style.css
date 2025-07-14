@@ -9,7 +9,7 @@
 }
 
 window {
-    background-image: image(url("../../nixos-config/home/wallpapers/yosemite.png"));
+    background-image: image(url("../../nixos-config/home/current-wp/current-wallpaper-blur.jpg"));
     background-size: cover; 
 }
 

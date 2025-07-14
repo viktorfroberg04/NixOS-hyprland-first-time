@@ -11,7 +11,7 @@
 
       background = [{
         monitor = "";
-        path = "$HOME/nixos-config/home/wallpapers/yosemite.png";
+        path = "$HOME/nixos-config/home/current-wp/current-wallpaper-blur.jpg";
         blur_passes = 0;
       }];
 

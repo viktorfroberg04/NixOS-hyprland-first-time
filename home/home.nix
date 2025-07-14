@@ -11,11 +11,13 @@
     ./fastfetch
     ./btop
     ./ranger
+    ./waypaper
 
     # System
     ./hyprland-conf.nix
     ./hyprlock.nix
     ./hypridle.nix
+    ./gtk.nix
     ./hyprpaper
     ./wlogout
     ./mako
@@ -36,10 +38,10 @@
       pywal
       imagemagick
       thunderbird
-
+      nautilus
+      
       # Dev
       python3
-      
     ];
    
     # Pywal color template
