@@ -8,13 +8,10 @@
       extensions = with pkgs.vscode-extensions; [
         # Language support
         ms-python.python
-        
+        jnoortheen.nix-ide
       ];
       
       userSettings = {
-        # Theme settings (you'll need to install Catppuccin theme manually)
-        "workbench.colorTheme" = "Catppuccin Mocha";
-        "workbench.iconTheme" = "catppuccin-mocha";
       };
     };
   };

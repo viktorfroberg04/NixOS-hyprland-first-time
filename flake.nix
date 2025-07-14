@@ -1,5 +1,5 @@
 {
-  description = "My NixOS configuration with Catppuccin theming";
+  description = "My NixOS configuration with pywal theming";
   inputs = {
     # Use the unstable channel for latest packages
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -9,37 +9,39 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
-    # Add Catppuccin theming
-    catppuccin.url = "github:catppuccin/nix";
   };
   
-  outputs = { self, nixpkgs, home-manager, catppuccin }: {
+  outputs = { self, nixpkgs, home-manager }: 
+    let
+      # Import your variables
+      vars = import ./system/variables.nix { 
+        config = {}; 
+        lib = nixpkgs.lib; 
+      };
+        
+      # Extract the actual values from the config
+      hostname = vars.config.var.hostname;
+      username = vars.config.var.username;
+    in {
     # Replace 'nixos' with your actual hostname
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";  # Change if you're on ARM
       specialArgs = { 
         inherit self;
-        inherit catppuccin;
       };
       modules = [
         # Your existing configuration files
         ./configuration.nix
-        
-        # Add Catppuccin module
-        catppuccin.nixosModules.catppuccin
       ];
     };
 
     # Home Manager configuration (standalone)
-    homeConfigurations.viktor = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       extraSpecialArgs = { 
-        inherit catppuccin;
       };
       modules = [
         ./home/home.nix
-        catppuccin.homeModules.catppuccin
       ];
     };
   };
