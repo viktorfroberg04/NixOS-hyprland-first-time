@@ -25,8 +25,8 @@
   ];
     
   home = {
-    inherit (config.var) username;
-    # homeDirectory = "/home/" + config.var.username;
+    username = config.home.username;
+    homeDirectory = "/home/${config.home.username}";
 
     
     # Packages that should be installed to the user profile.

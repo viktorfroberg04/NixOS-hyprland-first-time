@@ -42,10 +42,6 @@
       };
       modules = [
         ./home/home.nix
-
-        {
-          home.homeDirectory = "/home/${username}";
-        }
       ];
     };
   };
