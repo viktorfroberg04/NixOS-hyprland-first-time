@@ -2,7 +2,7 @@
 
   imports = [
     # User config
-    ../system/variables.nix
+    # ../system/variables.nix
 
     # Programs
     ./kitty.nix
