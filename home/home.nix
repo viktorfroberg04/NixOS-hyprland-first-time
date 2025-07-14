@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, username, ... }: {
 
   imports = [
     # User config
@@ -25,8 +25,7 @@
   ];
     
   home = {
-    username = config.home.username;
-    homeDirectory = "/home/${config.home.username}";
+    homeDirectory = "/home/${username}";
 
     
     # Packages that should be installed to the user profile.
