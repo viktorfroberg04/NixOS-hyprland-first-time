@@ -39,9 +39,6 @@
     homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       extraSpecialArgs = {
-        config = {
-          var = vars.config.var;
-        };
       };
       modules = [
         ./home/home.nix

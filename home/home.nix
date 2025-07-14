@@ -271,7 +271,6 @@
   programs = {
     # Let Home Manager install and manage itself
     home-manager.enable = true;
- 
   };
 
   # Services should be at the top level
