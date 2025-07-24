@@ -38,6 +38,7 @@
     git
     tree
     firefox
+    pwvucontrol
   ];
 
   # Set the default editor to vim.

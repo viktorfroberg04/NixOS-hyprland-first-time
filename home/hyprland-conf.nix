@@ -36,10 +36,10 @@
 
       # -- Monitor Configuration --
       # Format: monitor=NAME,RESOLUTION@REFRESH,POSITION,SCALE
-      # monitor = [
-        # "preferred,auto,auto"  # Use preferred resolution, auto position/scale
-        # "eDP-1, 1920x1080@60.00300, 0x0, 1"  # Specific laptop display config
-      # ];
+      monitor = [
+          "VGA-1,preferred,0x0,1"
+          "LVDS-1,disable"
+      ];
 
       # -- Program Variables --
       # Define your preferred applications here
@@ -55,7 +55,7 @@
       general = {
         gaps_in = 5;             # Gap between windows (inner)
         gaps_out = 8;            # Gap between windows and screen edges (outer)
-        border_size = 1;         # Window border thickness (0 = no borders)
+        border_size = 2;         # Window border thickness (0 = no borders)
         layout = "dwindle";      # Layout algorithm (dwindle = automatic tiling)
         allow_tearing = false;   # Disable screen tearing (better for most use cases)
       
