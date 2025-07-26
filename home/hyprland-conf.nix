@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
 
   imports = [
-    ./waybar
+    ./waybar-own
     ./binds.nix
   ];
 

@@ -1,0 +1,77 @@
+{
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{name}"
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "on-click": "activate"
+    },
+
+    "clock": {
+        "interval": 60,
+        "format": "{:%a %e,    %H:%M}",
+        "format-alt": "{:%d-%m-%Y - %H:%M}",
+		"tooltip-format": "<tt><big>{calendar}</big></tt>",
+		"calendar": {
+			"mode": "month",
+			"weeks-pos": "right",
+			"on-scroll": 1,
+			"format": {
+				"months": "<span color='#ffffff'><b>{}</b></span>",
+				"days": "<span color='#ffffff'><b>{}</b></span>",
+				"weeks": "<span color='#ffffff'><b>W{}</b></span>",
+				"weekdays": "<span color='#ffffff'><b>{}</b></span>",
+				"today": "<span color='#ffffff'><b><u>{}</u></b></span>"
+			}
+        },
+        "actions": {
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "pulseaudio": {
+		"scroll-step": 1,
+		"format": "{icon}  {volume}%",
+		"format-muted": "󰖁 ",
+		"format-icons": {
+			"headphone": " ",
+			"default": [" ", " ", " ", " "]
+		},
+		"on-click": "pwvucontrol"
+	},
+
+	"cpu": {
+		"format": "󰍛  {usage}%",
+		"on-click": "kitty btop"
+	},
+
+	"memory": {
+		"format": "  {percentage}%",
+		"on-click": "kitty btop"
+	},
+
+	"network": {
+		"format-ethernet": "󰈁 Ethernet",
+		"format-wifi": "  {signalStrength}%",
+		"format-disconnected": "󰈂 Disconnected",
+		"tooltip-format-ethernet": "󰈁 {ifname}\nIP: {ipaddr}\n   {bandwidthUpBits}   {bandwidthDownBits}",
+		"tooltip-format-wifi": " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n  {bandwidthUpBits}   {bandwidthDownBits}",
+		"tooltip-fromat-disconnected": "Disconnected",
+		"on-click": "kitty nmtui"
+	},
+
+	"temperature": {
+		"format": " {temperatureC}°C ",
+		"on-click": "kitty btop"
+	},
+
+	"custom/exit": {
+		"format": "",
+		"on-click": "wlogout -b 2",
+		"tooltip": false		
+	}
+}

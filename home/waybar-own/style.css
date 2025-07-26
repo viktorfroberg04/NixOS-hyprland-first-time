@@ -1,0 +1,211 @@
+@import "../../.cache/wal/colors-waybar.css";
+
+/* Waybar-specific color assignments (matching your original structure) */
+@define-color tt @color1;          /* tooltip color */
+@define-color text @color1;       /* text color */
+@define-color hovertext @color0;
+@define-color bg-hover @color1;
+@define-color bg-trans rgba(0, 0, 0, 0.6);
+
+/* general */
+* {
+    font-family: "JetBrains Mono";
+    border: none;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background-color: transparent;
+    border: none;
+    color: @text;
+}
+
+/* tooltip */
+tooltip {
+    border-radius: 5px;
+    border: 1px solid @hovertext;
+    background-color: @tt;
+    opacity: 0.6;
+}
+
+tooltip label {
+    padding: 0px;
+    margin: -5px 0px;
+    font-size: 12px;
+    color: @hovertext;
+}
+
+/* Logout Menu */
+#custom-exit {
+    /* Make it square */
+    min-width: 30px;
+    padding: 0;
+    padding-right: 4px;
+    
+    /* Translucent background */
+    background-color: @bg-trans;
+    
+    /* Colored border */
+    border: 2px solid @text;
+    border-radius: 18px;
+    
+    /* Text styling */
+    color: @text;
+    font-size: 18px;
+    
+    /* Smooth transitions */
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+#custom-exit:hover {
+    background-color: @bg-hover;
+    border-color: @text;
+    color: @hovertext;
+}
+
+/* network */
+#network { 
+    background-color: @bg-trans;
+    font-size: 16px;
+    font-weight: normal;
+    color: @text;
+    border: 2px solid @text;
+    border-radius: 18px;
+    padding: 0px 6px 0px 6px;
+}
+
+#network.ethernet {
+    background-color: @bg-trans;
+    color: @text;
+}
+
+#network.wifi {
+    background-color: @bg-trans;
+    color: @text;
+}
+
+/* Hover effect */
+#network:hover {
+    background-color: @bg-hover;
+    border-color: @text;
+    color: @hovertext;
+}
+
+/* audio */
+#pulseaudio {
+    min-width: 80px;
+    background-color: @bg-trans;
+    font-size: 16px;
+    color: @text;
+    border-radius: 18px;
+    border: 2px solid @text;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+#pulseaudio:hover {
+    background-color: @bg-hover;
+    border-color: @text;
+    color: @hovertext;
+}
+
+/* hardware group */
+#cpu,#temperature,#memory {
+    min-width: 60px;
+    background-color: @bg-trans;
+    border-radius: 18px;
+    border: 2px solid @text;
+    padding: 0px 6px 0px 6px;
+    font-size: 16px;
+    color: @text;
+    transition: all 0.3s ease;
+}
+
+/* Hover effects */
+#cpu:hover {
+    background-color: @bg-hover;
+    border-color: @text;
+    color: @hovertext;
+}
+
+#temperature:hover {
+    background-color: @bg-hover;
+    border-color: @text;
+    color: @hovertext;
+}
+
+#memory:hover {
+    background-color: @bg-hover;
+    border-color: @text;
+    color: @hovertext;
+}
+
+/* clock */
+#clock {
+    background-color: @bg-trans;
+    font-size: 16px;
+    color: @text;
+    border-radius: 18px;
+    border: 2px solid @text;
+    padding: 0px 6px 0px 6px;
+    transition: all 0.3s ease;
+}
+
+#clock:hover {
+    background-color: @bg-hover;
+    border-color: @text;
+    color: @hovertext;
+}
+
+/* taskbar */
+#taskbar {
+    background: @bg-trans;
+    padding: 0px;
+    border: 2px solid @text;
+    border-radius: 18px;
+}
+
+#taskbar button {
+    margin: 0px 0px;
+    padding: 0px 5px;
+    border-radius: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+#taskbar button:hover {
+    background: @bg-hover;
+}
+
+/* workspaces */
+#workspaces {
+    border-radius: 0px;
+    color: @text;
+    background-color: transparent;
+}
+
+#workspaces button {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 2px;
+    padding: 0 4px;
+    color: @text;
+    background-color: @bg-trans;
+    border: 2px solid @text;
+    border-radius: 18px; 
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    color: @hovertext;
+    background: @bg-hover;
+    border: 2px solid @text;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+    color: @hovertext;
+    background: @bg-hover;
+    border: 2px solid @text;
+}
