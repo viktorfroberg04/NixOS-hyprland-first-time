@@ -5,6 +5,29 @@
     hyprpaper
   ];
 
+
+  # Alternative: Don't manage the config file with Nix
+  # Just ensure the directory exists and let waypaper create its own config
+  home.activation.waypaper-setup = ''
+    mkdir -p ${config.home.homeDirectory}/.config/waypaper
+    # Only create config if it doesn't exist
+    if [ ! -f ${config.home.homeDirectory}/.config/waypaper/config.ini ]; then
+    cat > ${config.home.homeDirectory}/.config/waypaper/config.ini << 'EOF'
+    [Settings]
+    language = en
+    folder = ${config.home.homeDirectory}/nixos-config/home/wallpapers
+    wallpaper = 
+    monitors = All
+    fill = Fill
+    sort = name
+    color = #ffffff
+    subfolders = False
+    number_of_columns = 3
+    post_command = ${config.home.homeDirectory}/.local/bin/wallpaper-changed
+    EOF
+    fi
+  '';
+
   # Your wallpaper change script
   home.file.".local/bin/wallpaper-changed" = {
     text = ''
@@ -24,6 +47,9 @@
       # Run pywal to generate color scheme
       wal -i "$current_wallpaper"
       sleep 0.2
+
+      # Update firefox theme
+      pywalfox update
 
       # Update mako config
       if [ -f "$HOME/.cache/wal/mako" ]; then
@@ -63,27 +89,5 @@
     '';
     executable = true;
   };
-
-  # Alternative: Don't manage the config file with Nix
-  # Just ensure the directory exists and let waypaper create its own config
-  home.activation.waypaper-setup = ''
-    mkdir -p ${config.home.homeDirectory}/.config/waypaper
-    # Only create config if it doesn't exist
-    if [ ! -f ${config.home.homeDirectory}/.config/waypaper/config.ini ]; then
-    cat > ${config.home.homeDirectory}/.config/waypaper/config.ini << 'EOF'
-    [Settings]
-    language = en
-    folder = ${config.home.homeDirectory}/nixos-config/home/wallpapers
-    wallpaper = 
-    monitors = All
-    fill = Fill
-    sort = name
-    color = #ffffff
-    subfolders = False
-    number_of_columns = 3
-    post_command = ${config.home.homeDirectory}/.local/bin/wallpaper-changed
-    EOF
-    fi
-  '';
 
 }

@@ -9,7 +9,7 @@
 
 /* general */
 * {
-    font-family: "JetBrains Mono";
+    font-family: "JetBrains Mono Nerd Font";
     border: none;
     border-radius: 0px;
 }
@@ -37,23 +37,14 @@ tooltip label {
 
 /* Logout Menu */
 #custom-exit {
-    /* Make it square */
     min-width: 30px;
     padding: 0;
-    padding-right: 4px;
-    
-    /* Translucent background */
+    padding-right: 4px;    
     background-color: @bg-trans;
-    
-    /* Colored border */
     border: 2px solid @text;
     border-radius: 18px;
-    
-    /* Text styling */
     color: @text;
     font-size: 18px;
-    
-    /* Smooth transitions */
     transition: all 0.3s ease;
 }
 
@@ -112,7 +103,7 @@ tooltip label {
 }
 
 /* hardware group */
-#cpu,#temperature,#memory {
+#cpu,#memory {
     min-width: 60px;
     background-color: @bg-trans;
     border-radius: 18px;
@@ -130,13 +121,27 @@ tooltip label {
     color: @hovertext;
 }
 
-#temperature:hover {
+
+#memory:hover {
     background-color: @bg-hover;
     border-color: @text;
     color: @hovertext;
 }
 
-#memory:hover {
+
+/* Temperature */
+#temperature {
+    min-width: 60px;
+    background-color: @bg-trans;
+    border-radius: 18px;
+    border: 2px solid @text;
+    padding-left: 10px;
+    font-size: 16px;
+    color: @text;
+    transition: all 0.3s ease;
+}
+
+#temperature:hover {
     background-color: @bg-hover;
     border-color: @text;
     color: @hovertext;
@@ -176,7 +181,6 @@ tooltip label {
     margin: 0px 0px;
     padding: 0px 5px;
     border-radius: 16px;
-    transition: all 0.3s ease-in-out;
 }
 
 #taskbar button:hover {
@@ -192,7 +196,7 @@ tooltip label {
 
 #workspaces button {
     font-size: 16px;
-    font-weight: bold;
+    font-weight: normal;
     margin: 0 2px;
     padding: 0 4px;
     color: @text;

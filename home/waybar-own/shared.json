@@ -12,7 +12,7 @@
 
     "clock": {
         "interval": 60,
-        "format": "{:%a %e,    %H:%M}",
+        "format": "{:%a %e, %H:%M}",
         "format-alt": "{:%d-%m-%Y - %H:%M}",
 		"tooltip-format": "<tt><big>{calendar}</big></tt>",
 		"calendar": {
@@ -35,7 +35,7 @@
 
     "pulseaudio": {
 		"scroll-step": 1,
-		"format": "{icon}  {volume}%",
+		"format": "{icon} {volume}%",
 		"format-muted": "󰖁 ",
 		"format-icons": {
 			"headphone": " ",
@@ -45,12 +45,12 @@
 	},
 
 	"cpu": {
-		"format": "󰍛  {usage}%",
+		"format": "󰍛 {usage}%",
 		"on-click": "kitty btop"
 	},
 
 	"memory": {
-		"format": "  {percentage}%",
+		"format": " {percentage}%",
 		"on-click": "kitty btop"
 	},
 
