@@ -22,6 +22,7 @@
       # Extract the actual values from the config
       hostname = vars.config.var.hostname;
       username = vars.config.var.username;
+      andusername = vars.config.var.andusername;
     in {
     # Replace 'nixos' with your actual hostname
     nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
@@ -36,13 +37,25 @@
     };
 
     # Home Manager configuration (standalone)
-    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      extraSpecialArgs = {
+    homeConfigurations = {
+      ${username} = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {
+        };
+        modules = [
+          ./home/home.nix
+        ];
       };
-      modules = [
-        ./home/home.nix
-      ];
+
+      # New user configuration
+      ${andusername} = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {
+        };
+        modules = [
+          ./system/users/anders/home-manager/home.nix
+        ];
+      };
     };
   };
 }

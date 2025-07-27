@@ -3,6 +3,7 @@
   config.var = {
     hostname = "nixos";
     username = "viktor";
+    andusername = "anders";
     
     keyboardLayout = "sv-latin1";
 
